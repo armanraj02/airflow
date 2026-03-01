@@ -1,0 +1,24 @@
+[2026-02-27T04:35:35.370+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-27T04:35:35.602+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_processing.fetch_events scheduled__2026-02-10T00:00:00+00:00 [queued]>
+[2026-02-27T04:35:35.626+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_processing.fetch_events scheduled__2026-02-10T00:00:00+00:00 [queued]>
+[2026-02-27T04:35:35.628+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2026-02-27T04:35:35.703+0000] {taskinstance.py:2327} INFO - Executing <Task(BashOperator): fetch_events> on 2026-02-10 00:00:00+00:00
+[2026-02-27T04:35:35.749+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=15912) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-02-27T04:35:35.757+0000] {standard_task_runner.py:63} INFO - Started process 16068 to run task
+[2026-02-27T04:35:35.772+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'data_processing', 'fetch_events', 'scheduled__2026-02-10T00:00:00+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/backfilling.py', '--cfg-path', '/tmp/tmperbze3ad']
+[2026-02-27T04:35:35.784+0000] {standard_task_runner.py:91} INFO - Job 44: Subtask fetch_events
+[2026-02-27T04:35:36.464+0000] {task_command.py:426} INFO - Running <TaskInstance: data_processing.fetch_events scheduled__2026-02-10T00:00:00+00:00 [running]> on host eee3dfa392df
+[2026-02-27T04:35:37.019+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_processing' AIRFLOW_CTX_TASK_ID='fetch_events' AIRFLOW_CTX_EXECUTION_DATE='2026-02-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-10T00:00:00+00:00'
+[2026-02-27T04:35:37.023+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-27T04:35:37.027+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-02-27T04:35:37.050+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "mkdir -p /tmp/data && echo 'START=2026-02-10 00:00:00+00:00 END=2026-02-11 00:00:00+00:00' && curl -s -o /tmp/data/events_2026-02-10.json 'http://events_api:5000/events?start_date=2026-02-24&end_date=2026-02-26'"]
+[2026-02-27T04:35:37.157+0000] {subprocess.py:86} INFO - Output:
+[2026-02-27T04:35:37.278+0000] {subprocess.py:93} INFO - START=2026-02-10 00:00:00+00:00 END=2026-02-11 00:00:00+00:00
+[2026-02-27T04:35:37.539+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-02-27T04:35:37.568+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-27T04:35:37.675+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=data_processing, task_id=fetch_events, execution_date=20260210T000000, start_date=20260227T043535, end_date=20260227T043537
+[2026-02-27T04:35:37.771+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-02-27T04:35:37.925+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-27T04:35:37.940+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

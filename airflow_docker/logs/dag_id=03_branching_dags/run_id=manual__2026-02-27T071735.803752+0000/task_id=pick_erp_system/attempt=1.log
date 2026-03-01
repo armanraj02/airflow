@@ -1,0 +1,24 @@
+[2026-02-27T07:17:40.604+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-27T07:17:40.649+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 03_branching_dags.pick_erp_system manual__2026-02-27T07:17:35.803752+00:00 [queued]>
+[2026-02-27T07:17:40.668+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 03_branching_dags.pick_erp_system manual__2026-02-27T07:17:35.803752+00:00 [queued]>
+[2026-02-27T07:17:40.670+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-02-27T07:17:40.705+0000] {taskinstance.py:2327} INFO - Executing <Task(BranchPythonOperator): pick_erp_system> on 2026-02-27 07:17:35.803752+00:00
+[2026-02-27T07:17:40.724+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=45337) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-02-27T07:17:40.729+0000] {standard_task_runner.py:63} INFO - Started process 45389 to run task
+[2026-02-27T07:17:40.729+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', '03_branching_dags', 'pick_erp_system', 'manual__2026-02-27T07:17:35.803752+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/branching_dags.py', '--cfg-path', '/tmp/tmpculbrr0s']
+[2026-02-27T07:17:40.737+0000] {standard_task_runner.py:91} INFO - Job 149: Subtask pick_erp_system
+[2026-02-27T07:17:40.906+0000] {task_command.py:426} INFO - Running <TaskInstance: 03_branching_dags.pick_erp_system manual__2026-02-27T07:17:35.803752+00:00 [running]> on host eee3dfa392df
+[2026-02-27T07:17:41.113+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='03_branching_dags' AIRFLOW_CTX_TASK_ID='pick_erp_system' AIRFLOW_CTX_EXECUTION_DATE='2026-02-27T07:17:35.803752+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-27T07:17:35.803752+00:00'
+[2026-02-27T07:17:41.122+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-27T07:17:41.128+0000] {baseoperator.py:399} WARNING - BranchPythonOperator.execute cannot be called outside TaskInstance!
+[2026-02-27T07:17:41.135+0000] {python.py:237} INFO - Done. Returned value was: fetch_sales_new
+[2026-02-27T07:17:41.142+0000] {branch.py:36} INFO - Branch into fetch_sales_new
+[2026-02-27T07:17:41.150+0000] {skipmixin.py:178} INFO - Following branch fetch_sales_new
+[2026-02-27T07:17:41.201+0000] {skipmixin.py:246} INFO - Skipping tasks [('fetch_sales_old', -1)]
+[2026-02-27T07:17:41.258+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-27T07:17:41.291+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=03_branching_dags, task_id=pick_erp_system, execution_date=20260227T071735, start_date=20260227T071740, end_date=20260227T071741
+[2026-02-27T07:17:41.349+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-02-27T07:17:41.419+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-27T07:17:41.422+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

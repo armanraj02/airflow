@@ -1,0 +1,21 @@
+[2026-02-27T05:59:58.472+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-02-27T05:59:58.503+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 03_branching_dags.clean_sales_new manual__2026-02-27T05:59:44.252202+00:00 [queued]>
+[2026-02-27T05:59:58.515+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 03_branching_dags.clean_sales_new manual__2026-02-27T05:59:44.252202+00:00 [queued]>
+[2026-02-27T05:59:58.517+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2026-02-27T05:59:58.533+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): clean_sales_new> on 2026-02-27 05:59:44.252202+00:00
+[2026-02-27T05:59:58.541+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=96670) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-02-27T05:59:58.546+0000] {standard_task_runner.py:63} INFO - Started process 96708 to run task
+[2026-02-27T05:59:58.543+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', '03_branching_dags', 'clean_sales_new', 'manual__2026-02-27T05:59:44.252202+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/branching_dags.py', '--cfg-path', '/tmp/tmpp2kqf7qp']
+[2026-02-27T05:59:58.547+0000] {standard_task_runner.py:91} INFO - Job 103: Subtask clean_sales_new
+[2026-02-27T05:59:58.658+0000] {task_command.py:426} INFO - Running <TaskInstance: 03_branching_dags.clean_sales_new manual__2026-02-27T05:59:44.252202+00:00 [running]> on host eee3dfa392df
+[2026-02-27T05:59:58.776+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='03_branching_dags' AIRFLOW_CTX_TASK_ID='clean_sales_new' AIRFLOW_CTX_EXECUTION_DATE='2026-02-27T05:59:44.252202+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-27T05:59:44.252202+00:00'
+[2026-02-27T05:59:58.780+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-02-27T05:59:58.782+0000] {logging_mixin.py:188} INFO - Cleaning new sales data
+[2026-02-27T05:59:58.782+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-02-27T05:59:58.784+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-02-27T05:59:58.800+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=03_branching_dags, task_id=clean_sales_new, execution_date=20260227T055944, start_date=20260227T055958, end_date=20260227T055958
+[2026-02-27T05:59:58.841+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-02-27T05:59:58.873+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-27T05:59:58.876+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

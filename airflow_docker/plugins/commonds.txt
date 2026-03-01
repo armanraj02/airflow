@@ -1,0 +1,1 @@
+r exec -t airflow-docker-airflow-worker-1 bash
